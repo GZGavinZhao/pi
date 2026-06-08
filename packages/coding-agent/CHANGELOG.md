@@ -9,6 +9,7 @@
 - Added a fullscreen exit output setting to choose between printing the final transcript and only a session resume hint.
 - Added the `defaultTools` setting for configuring the initial built-in tool selection globally or per project.
 - Added `--use-theme <name[/name]>` to choose an initial per-run interactive theme without changing saved settings ([#7722](https://github.com/earendil-works/pi/pull/7722) by [@rwachtler](https://github.com/rwachtler)).
+- Added Amazon Bedrock Mantle as a selectable built-in provider (`amazon-bedrock-mantle-openai-responses`) with GPT-5.4, GPT-5.5, and GPT-5.6 Sol, Terra, and Luna models, including `max` thinking level support for GPT-5.6, reusing Amazon Bedrock AWS credentials. See [Providers](docs/providers.md) ([#6216](https://github.com/earendil-works/pi/pull/6216) by [@unexge](https://github.com/unexge)).
 
 ### Changed
 
