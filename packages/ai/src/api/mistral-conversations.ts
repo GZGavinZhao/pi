@@ -885,7 +885,19 @@ function buildToolResultText(text: string, hasImages: boolean, supportsImages: b
 	return isError ? "[tool error] (no tool output)" : "(no tool output)";
 }
 
+const MISTRAL_REASONING_EFFORT_VALUES = new Set<string>(["none", "high"]);
+
 function usesReasoningEffort(model: Model<"mistral-conversations">): boolean {
+	// If thinkingLevelMap has explicit reasoning_effort values ("none" or "high"),
+	// use reasoning_effort mode. This allows custom models added via models.json to
+	// opt into reasoning_effort rather than prompt_mode for reasoning control.
+	if (model.thinkingLevelMap) {
+		const hasReasoningEffortValues = Object.values(model.thinkingLevelMap).some(
+			(v) => v !== null && v !== undefined && MISTRAL_REASONING_EFFORT_VALUES.has(v),
+		);
+		if (hasReasoningEffortValues) return true;
+	}
+	// Fallback: hardcoded list for built-in models that do not set thinkingLevelMap
 	return model.id === "mistral-small-2603" || model.id === "mistral-small-latest" || model.id === "mistral-medium-3.5";
 }
 
