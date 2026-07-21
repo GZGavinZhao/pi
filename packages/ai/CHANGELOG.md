@@ -4,7 +4,7 @@
 
 ### Added
 
-- Added Amazon Bedrock Mantle as a built-in OpenAI Responses-compatible provider (`amazon-bedrock-mantle-openai-responses`) with GPT-5.4, GPT-5.5, and GPT-5.6 Sol, Terra, and Luna models, including `max` thinking level support for GPT-5.6, authenticating through the official `openai` SDK's Bedrock provider (`openai/providers/bedrock/aws`) with AWS SigV4 request signing or a Bedrock bearer token ([#6216](https://github.com/earendil-works/pi/pull/6216) by [@unexge](https://github.com/unexge)).
+- Added Amazon Bedrock Mantle as a built-in OpenAI Responses-compatible provider (`amazon-bedrock-mantle-openai-responses`) with GPT-5.4, GPT-5.5, and GPT-5.6 Sol, Terra, and Luna models, including `max` thinking level support for GPT-5.6, region-aware endpoint routing with model-specific fallbacks, and authentication through the official `openai` SDK's Bedrock provider (`openai/providers/bedrock/aws`) using AWS SigV4 request signing or a Bedrock bearer token ([#6216](https://github.com/earendil-works/pi/pull/6216) by [@unexge](https://github.com/unexge)).
 
 ### Changed
 
